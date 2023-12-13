@@ -1,1 +1,1 @@
-Projeto base usando a biblioteca Jakarta
+projeto web JPA usando hibernate e mysql
