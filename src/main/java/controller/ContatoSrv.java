@@ -20,12 +20,11 @@ public class ContatoSrv extends HttpServlet {
 
         try {
             String acao = request.getParameter("acao");
-            System.out.println(acao);
             String id = request.getParameter("id");
             String nome = request.getParameter("nome");
             String email = request.getParameter("email");
             String telefone = request.getParameter("telefone");
-            InterfaceDao dao = new ContatoDaoJpa();
+            ContatoDaoJpa dao = new ContatoDaoJpa();
             RequestDispatcher rd;
             Contato c = null;
             
