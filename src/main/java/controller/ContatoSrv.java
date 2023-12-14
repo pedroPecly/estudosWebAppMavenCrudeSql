@@ -84,7 +84,7 @@ public class ContatoSrv extends HttpServlet {
         try {
             lista = dao.listar();
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            Logger.getLogger(ContatoSrv.class.getName()).log(Level.SEVERE, null, ex);
         }
         String listaHTML = "";
         for (Contato contato : lista) {
