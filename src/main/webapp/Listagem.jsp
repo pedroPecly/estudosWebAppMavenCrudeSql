@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listagem de Contatos</title>
+        <link rel="stylesheet" href="css/style_listagem.css">
     </head>
 
     <%
@@ -35,5 +36,10 @@
             </tbody>
         </table>
     </center>
+    <footer>
+        <center>
+            <button onclick="location.href='index.html'" id="btnVoltar">Voltar</button>
+        </center>
+    </footer>
 </body>
 </html>
