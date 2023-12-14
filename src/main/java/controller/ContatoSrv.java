@@ -31,11 +31,10 @@ public class ContatoSrv extends HttpServlet {
             switch (acao) {
                 case "inclusao":
                     c = new Contato(nome, email, telefone);
-                    try {
-                        dao.incluir(c);
-                    } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
-                    }
+
+                    dao.incluir(c);
+
+
                     rd = request.getRequestDispatcher("Listagem.jsp?lista=" + listagem());
                     rd.forward(request, response);
                     break;
@@ -53,23 +52,18 @@ public class ContatoSrv extends HttpServlet {
                 case "edicao":
                     c = new Contato(nome, email, telefone);
                     c.setId(Integer.parseInt(id));
-                    try {
-                        dao.editar(c);
-                    } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
-                    }
+
+                    dao.editar(c);
+
+
                     rd = request.getRequestDispatcher("Listagem.jsp?lista=" + listagem());
                     rd.forward(request, response);
                     break;
                     
                 case "exclusao":
-                    try {
-                        c = new Contato();
-                        c.setId(Integer.parseInt(id));
-                        dao.excluir(c);
-                    } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
-                    }
+                    c = new Contato();
+                    c.setId(Integer.parseInt(id));
+                    dao.excluir(c);
                     rd = request.getRequestDispatcher("Listagem.jsp?lista=" + listagem());
                     rd.forward(request, response);
                     break;
@@ -85,7 +79,7 @@ public class ContatoSrv extends HttpServlet {
     }
 
     private String listagem() {
-        InterfaceDao dao = new ContatoDaoJpa();
+        ContatoDaoJpa dao = new ContatoDaoJpa();
         List<Contato> lista = null;
         try {
             lista = dao.listar();
